@@ -35,3 +35,10 @@ ggplot(data = diamonds, aes(x = carat, y = price, color = cut)) +
 ggplot(data = diamonds, aes(x = carat, y = price, color = cut)) +
   geom_point() +
   facet_wrap(~cut)
+
+#To see the lists of installed packages
+installed.packages()
+
+#install tidyverse and load
+install.packages("tideverse")
+libarary("tideverse")
