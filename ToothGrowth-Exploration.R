@@ -15,6 +15,17 @@ arrange(filter(ToothGrowth, dose < 1 ), len)
 #Pipe operator in R
 # "ctrl + shift + m" for shortcut pipe operator
 
+#performing the same task using pipe operator
 filtered_toothgrowth <- ToothGrowth %>%
   filter(dose==1) %>%
   arrange(len)
+View(filtered_toothgrowth)
+
+#doing a different grouping task
+
+summarized_tg <- ToothGrowth %>% 
+  filter(dose==1) %>% 
+  group_by(supp) %>% 
+  summarize(mean_len = mean(len, na.rm = T),.group="drop")
+
+View(summarized_tg)
