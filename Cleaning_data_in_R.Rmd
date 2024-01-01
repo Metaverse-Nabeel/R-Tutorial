@@ -5,7 +5,7 @@ output: html_document
 
 ## Background for this activity
 
-In this activity, youâ€™ll review a scenario, and focus on cleaning real data in R. You will learn more about data cleaning functions and perform basic calculations to gain initial insights into your data.
+In this activity, you will review a scenario, and focus on cleaning real data in R. You will learn more about data cleaning functions and perform basic calculations to gain initial insights into your data.
 
 Throughout this activity, you will also have the opportunity to practice writing your own code by making changes to the code chunks yourself. If you encounter an error or get stuck, you can always check the Lesson2_Clean_Solutions .rmd file in the Solutions folder under Week 3 for the complete, correct code.
 
@@ -40,7 +40,7 @@ In the chunk below, you will use the `read_csv()` function to import data from a
 If this line causes an error, copy in the line setwd("projects/Course 7/Week 3") before it.
 
 ```{r}
-bookings_df <- read_csv("hotel_bookings.csv")
+bookings_df <- read_csv("Hotel.csv")
 ```
 
 ## Step 3: Getting to know your data
@@ -79,7 +79,7 @@ Based on the functions you have used so far, how would you describe your data in
 
 ```{r}
 trimmed_df <- bookings_df %>% 
-  select( , , )
+  select(hotel, is_canceled, lead_time)
 ```
 
 Remember to check the solutions doc if you are having trouble filling out any of these code chunks.
@@ -91,7 +91,7 @@ Fill in the space to the left of the '=' symbol with the new variable name:
 ```{r}
 trimmed_df %>% 
   select(hotel, is_canceled, lead_time) %>% 
-  rename( = hotel)
+  rename(hotel_type = hotel)
 ```
 
 Another common task is to either split or combine data in different columns. In this example, you can combine the arrival month and year into one column using the unite() function:
@@ -108,7 +108,7 @@ You can also use the`mutate()` function to make changes to your columns. Let's s
 
 ```{r}
 example_df <- bookings_df %>%
-  mutate(guests = )
+  mutate(guests = adults + children + babies )
 
 head(example_df)
 ```
@@ -118,8 +118,8 @@ Great. Now it's time to calculate some summary statistics! Calculate the total n
 ```{r}
 
 example_df <- bookings_df %>%
-
-
+  summarize(number_canceled = sum(is_canceled),
+            average_lead_time = mean(lead_time))
 head(example_df)
 ```
 
