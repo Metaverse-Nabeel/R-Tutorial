@@ -32,3 +32,8 @@ skim(penguins)
 
 skim_without_charts(penguins)
 
+penguins %>% arrange(bill_length_mm)
+penguins %>% arrange(-bill_length_mm)
+
+penguins_desc <- penguins %>% arrange(-bill_length_mm)
+View(penguins_desc)
