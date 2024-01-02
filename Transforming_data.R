@@ -10,3 +10,15 @@ job_title <- c("Professional", "Programmer", "Management", "Clerical", "Develope
 employee <- data.frame(id, first_name, last_name, job_title)
 
 print(employee)
+
+#combining two columns
+
+united_employee <- unite(employee, 'name', first_name, last_name, sep=' ')
+
+print(united_employee)
+
+#separating two columns
+
+separate_employee <- separate(united_employee, 'name', into=c('first_name', 'last_name'), sep=' ')
+
+print(separate_employee)
