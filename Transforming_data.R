@@ -22,3 +22,10 @@ print(united_employee)
 separate_employee <- separate(united_employee, 'name', into=c('first_name', 'last_name'), sep=' ')
 
 print(separate_employee)
+
+
+#mutate function to add columns in data set
+View(penguins)
+
+penguins %>% 
+  mutate(body_mass_kg = body_mass_g/1000, flipper_length_m = flipper_length_mm/1000)

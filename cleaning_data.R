@@ -50,3 +50,6 @@ penguins %>% group_by(species, island) %>% drop_na() %>% summarise(max_bl = max(
 # To filter using species
 penguins %>% filter(species == "Adelie")
 
+
+
+
