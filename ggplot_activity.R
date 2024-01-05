@@ -25,3 +25,13 @@ ggplot(data = penguins) +
   geom_point(mapping = aes(x = bill_depth_mm, y = bill_length_mm))
  
 
+
+#ggplot to create scatter plot and making different aesthetics
+
+#ggplot(data = penguins) +
+#  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color=species, shape=species, size=species), color='purple')
+
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, alpha=species), color='purple')
+
+             
