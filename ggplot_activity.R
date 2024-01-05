@@ -29,9 +29,27 @@ ggplot(data = penguins) +
 #ggplot to create scatter plot and making different aesthetics
 
 #ggplot(data = penguins) +
-#  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color=species, shape=species, size=species), color='purple')
+#  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color=species, shape=species, size=species))
 
 ggplot(data = penguins) +
   geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, alpha=species), color='purple')
 
-             
+#Changing geom point to line and other geom
+
+ggplot(data = penguins) +
+  geom_line(mapping = aes(x = flipper_length_mm, y = body_mass_g), color='purple')
+
+#ggplot(data = penguins) +
+geom_smooth(mapping = aes(x = flipper_length_mm, y = body_mass_g), color='purple')
+  geom_line(mapping = aes(x = flipper_length_mm, y = body_mass_g), color='purple')
+
+ggplot(data = penguins) +
+  geom_jitter(mapping = aes(x = flipper_length_mm, y = body_mass_g), color='purple')
+
+#Now, making use of geom_bar
+
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x = cut, fill=cut))
+
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x = cut, fill=clarity))
