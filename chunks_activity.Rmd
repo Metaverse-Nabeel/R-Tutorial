@@ -1,0 +1,37 @@
+---
+title: "chunks_activity"
+author: "Nabeel Ahmed"
+date: "2024-01-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Adding Code chunks to R Markdown notebooks
+
+### Loading Penguin Data for visualization
+
+```{r ggplot for penguin data, warning=TRUE}
+
+library(ggplot2)
+
+library(palmerpenguins)
+
+data(penguins)
+
+View(penguins)
+
+```
+
+### Code chunk for creating visualization
+
+```{r ggplot for penguin data visualization}
+
+ggplot(data = penguins) +
+
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g))
+
+```
+
